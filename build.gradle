@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    compileOnly fileTree(dir: 'libs', include: ['godot-lib*.aar'])
+
+    // Firebase Core (needs Analytics implementation) (https://firebase.google.com/support/release-notes/android)
+    implementation 'com.google.firebase:firebase-analytics:17.4.0'
+    // Firebase Ads (AdMob) (https://firebase.google.com/support/release-notes/android)
+    implementation 'com.google.android.gms:play-services-ads:19.1.0'
+    // Firebase Ads (AdMob) Unity Mediation (https://github.com/googleads/googleads-mobile-android-mediation/blob/master/ThirdPartyAdapters/unity/CHANGELOG.md#version-3422)
+    //                                      (https://developers.google.com/admob/unity/mediation/unity)
+    implementation 'com.google.ads.mediation:unity:3.4.2.2'
+    // Firebase Authentication (https://firebase.google.com/support/release-notes/android)
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    // Firebase Authentication (Google) (https://developers.google.com/android/guides/setup)
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    // Firebase Firestore (Database) (https://firebase.google.com/support/release-notes/android)
+    implementation 'com.google.firebase:firebase-firestore:21.4.3'
+    // Firebase Cloud Storage (File storage) (https://firebase.google.com/support/release-notes/android)
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    // Firebase In-App Messaging (https://firebase.google.com/support/release-notes/android)
+    implementation 'com.google.firebase:firebase-inappmessaging-display:19.0.6'
+    // Firebase Cloud Messaging (https://firebase.google.com/support/release-notes/android)
+    //                          (https://developer.android.com/jetpack/androidx/releases/work)
+    implementation 'com.google.firebase:firebase-messaging:20.1.6'
+    implementation 'androidx.work:work-runtime:2.3.4'
+    implementation("com.google.guava:guava:29.0-android")
+}
+

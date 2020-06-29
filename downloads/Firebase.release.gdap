@@ -1,0 +1,20 @@
+[config]
+
+name="Firebase"
+binary_type="local"
+binary="Firebase.release.aar"
+
+[dependencies]
+remote=[
+    "com.google.firebase:firebase-analytics:17.4.0",
+    "com.google.android.gms:play-services-ads:19.1.0",
+    "com.google.ads.mediation:unity:3.4.2.2",
+    "com.google.firebase:firebase-auth:19.3.1",
+    "com.google.android.gms:play-services-auth:18.0.0",
+    "com.google.firebase:firebase-firestore:21.4.3",
+    "com.google.firebase:firebase-storage:19.1.1",
+    "com.google.firebase:firebase-inappmessaging-display:19.0.6",
+    "com.google.firebase:firebase-messaging:20.1.6",
+    "androidx.work:work-runtime:2.3.4",
+    "com.google.guava:guava:29.0-android"
+    ]
