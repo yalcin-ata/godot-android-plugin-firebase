@@ -15,6 +15,7 @@ For the general documentation look [there](https://github.com/yalcin-ata/godot-a
 - Edit ```[GODOT-PROJECT]/android/build/build.gradle```:
   - add ```classpath 'com.google.gms:google-services:4.3.3'``` above the line ```//CHUNK_BUILDSCRIPT_DEPENDENCIES_BEGIN```
   - add ```apply plugin: 'com.google.gms.google-services'``` above the line ```//CHUNK_GLOBAL_BEGIN```
+  - optional (for Authentication): search for ```buildTypes.all {``` and add to this block: ```resValue "string", "server_client_id", "project-123456..."``` where ```project-123456...``` is the *public-facing name* of your Firebase project
 - Edit ```[GODOT-PROJECT]/android/build/AndroidManifest.xml```:
   - add the following above the line ```<!--CHUNK_APPLICATION_BEGIN-->``` and do not forget to set your AdMob App Id
         
