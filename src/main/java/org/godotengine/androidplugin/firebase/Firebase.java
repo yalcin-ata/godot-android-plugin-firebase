@@ -243,7 +243,7 @@ public class Firebase extends GodotPlugin {
     }
 
     public void analytics_send_events(final String key, final Dictionary data) {
-        if (key.length() <= 0 || data.size() <= 0) {
+        if (key.length() <= 0) {
             return;
         }
 
