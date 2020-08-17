@@ -152,7 +152,8 @@ public class Utils {
         if (value instanceof Boolean) {
             bundle.putBoolean(key, (Boolean) value);
         } else if (value instanceof Integer) {
-            bundle.putLong(key, Long.valueOf((Integer) value));
+            // Storing as long since that's often expected
+            bundle.putLong(key, (Integer) value);
         } else if (value instanceof Double) {
             bundle.putDouble(key, (Double) value);
         } else if (value instanceof String) {
