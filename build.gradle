@@ -5,6 +5,19 @@ buildscript {
         google()
         jcenter()
     }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.1"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
 }
 
 android {
@@ -34,7 +47,7 @@ dependencies {
     compileOnly fileTree(dir: 'libs', include: ['godot-lib*.aar'])
 
     // Firebase Core (needs Analytics implementation) (https://firebase.google.com/support/release-notes/android)
-    implementation 'com.google.firebase:firebase-analytics:17.4.0'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
     // Firebase Ads (AdMob) (https://firebase.google.com/support/release-notes/android)
     implementation 'com.google.android.gms:play-services-ads:19.1.0'
     // Firebase Ads (AdMob) Unity Mediation (https://github.com/googleads/googleads-mobile-android-mediation/blob/master/ThirdPartyAdapters/unity/CHANGELOG.md#version-3422)

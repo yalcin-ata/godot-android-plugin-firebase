@@ -75,6 +75,8 @@ public class Firebase extends GodotPlugin {
         // ===== Analytics
         methods.add("analytics_send_custom");
         methods.add("analytics_send_events");
+        methods.add("analytics_set_collection_enabled");
+        methods.add("analytics_reset_data");
 
         // ===== Authentication
         methods.add("authentication_get_id_token");
@@ -243,13 +245,29 @@ public class Firebase extends GodotPlugin {
     }
 
     public void analytics_send_events(final String key, final Dictionary data) {
-        if (key.length() <= 0 || data.size() <= 0) {
+        if (key.length() <= 0) {
             return;
         }
 
         godot.runOnUiThread(new Runnable() {
             public void run() {
                 Analytics.getInstance(godot).sendEvents(key, data);
+            }
+        });
+    }
+
+    public void analytics_set_collection_enabled(final boolean enabled) {
+        godot.runOnUiThread(new Runnable() {
+            public void run() {
+                Analytics.getInstance(godot).setCollectionEnabled(enabled);
+            }
+        });
+    }
+
+    public void analytics_reset_data() {
+        godot.runOnUiThread(new Runnable() {
+            public void run() {
+                Analytics.getInstance(godot).resetData();
             }
         });
     }
