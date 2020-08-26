@@ -68,4 +68,12 @@ public class Analytics {
         // firebaseAnalytics = FirebaseAnalytics.getInstance(activity);
         firebaseAnalytics.logEvent("appEvent", bundle);
     }
+
+    public void setCollectionEnabled(final boolean enabled) {
+        firebaseAnalytics.setAnalyticsCollectionEnabled(enabled);
+    }
+
+    public void resetData() {
+        firebaseAnalytics.resetAnalyticsData();
+    }
 }
