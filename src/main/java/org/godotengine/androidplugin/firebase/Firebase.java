@@ -99,6 +99,7 @@ public class Firebase extends GodotPlugin {
         // ===== Cloud Messaging
         methods.add("cloudmessaging_subscribe_to_topic");
         methods.add("cloudmessaging_unsubscribe_from_topic");
+        methods.add("cloudmessaging_get_token");
 
         return methods;
     }
@@ -357,6 +358,11 @@ public class Firebase extends GodotPlugin {
             }
         });
     }
+
+    public String cloudmessaging_get_token() {
+        return CloudMessaging.getInstance(godot).getToken();
+    }
+
     // ===== Cloud Messaging ==========================================================================================
 
     // Forwarded callbacks you can reimplement, as SDKs often need them.
